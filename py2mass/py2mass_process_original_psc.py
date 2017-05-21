@@ -1,6 +1,6 @@
 import glob
 import numpy as np
-from py2mass import _find_2mass_dir, _get_radec_from_psc_line
+from .py2mass import _find_2mass_dir, _get_radec_from_psc_line
 import gzip
 import datetime
 
@@ -20,7 +20,7 @@ dec_bin_num = -900
 cur_psc_output_file = gzip.open(_2mass_dir + '/psc' + ('%+04i' % dec_bin_num) + '.gz', 'a')
 cur_psc_output_file_dec_bin_num = dec_bin_num
 for curfile in psc_files:
-    print datetime.datetime.utcnow(), curfile
+    print(datetime.datetime.utcnow(), curfile)
     f = gzip.open(curfile, 'r')
     for curline in f:
         cur_ra, cur_dec = _get_radec_from_psc_line(curline)
@@ -33,7 +33,7 @@ for curfile in psc_files:
 
 psc_files = glob.glob(_2mass_dir + '/psc[+,-][0-9][0-9][0-9].gz')
 for curfile in psc_files:
-    print datetime.datetime.utcnow(), curfile
+    print(datetime.datetime.utcnow(), curfile)
     f = gzip.open(curfile, 'r')
     txt = f.readlines()
     f.close()

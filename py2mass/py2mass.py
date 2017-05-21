@@ -60,9 +60,9 @@ def _find_2mass_dir():
 try:
     _2mass_dir = _find_2mass_dir()
 except:
-    print ("Could not find a 2MASS installation\n" +
+    print(("Could not find a 2MASS installation\n" +
            "             User needs to specifiy location with, e.g.:\n" +
-           "             py2mass.set_2mass_path('~/my_2mass_dir')")
+           "             py2mass.set_2mass_path('~/my_2mass_dir')"))
     _2mass_dir = None
 
 
@@ -127,7 +127,7 @@ def _convert_xsc_text_to_dataframe(sources_txt):
     Takes raw lines from extended source catalog (XSC) file and converts to a pandas DataFrame
     """
     xsc_format_descriptor = _get_xsc_format_descriptor()
-    return read_csv(io.StringIO(unicode(sources_txt)), sep='|', 
+    return read_csv(io.StringIO(str(sources_txt)), sep='|', 
                     names=xsc_format_descriptor['Parameter Name'].values)
 
 
@@ -136,7 +136,7 @@ def _convert_psc_text_to_dataframe(sources_txt):
     Takes raw lines from point source catalog (PSC) file and converts to a pandas DataFrame
     """
     psc_format_descriptor = _get_psc_format_descriptor()
-    return read_csv(io.StringIO(unicode(sources_txt)), sep='|', 
+    return read_csv(io.StringIO(str(sources_txt)), sep='|', 
                     names=psc_format_descriptor['Column Name'].values)
 
 
@@ -292,16 +292,16 @@ def main():
         else:
             show_help = True
     if show_help:
-        print "Usage:"
-        print "py2mass [psc|xsc] minRA maxRA minDEC maxDEC [pickle]"
-        print "----"
-        print "   psc - 2MASS Point Source Catalog"
-        print "   xsc - 2MASS Extended Source Catalog"
-        print " Default output is a nicely formatted text table."
-        print " Optional keyword (pickle) will dump a pickle of that table, "
-        print " which can then be read back in from file with, e.g.:"
-        print "    import pickle"
-        print "    stars = pickle.load(open(filename, 'r'))"
+        print("Usage:")
+        print("py2mass [psc|xsc] minRA maxRA minDEC maxDEC [pickle]")
+        print("----")
+        print("   psc - 2MASS Point Source Catalog")
+        print("   xsc - 2MASS Extended Source Catalog")
+        print(" Default output is a nicely formatted text table.")
+        print(" Optional keyword (pickle) will dump a pickle of that table, ")
+        print(" which can then be read back in from file with, e.g.:")
+        print("    import pickle")
+        print("    stars = pickle.load(open(filename, 'r'))")
 
 
 if __name__ == '__main__':

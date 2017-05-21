@@ -16,7 +16,7 @@ import numpy as np
 
 # This is a one-time use script to confirm that the DEC swatch ranges are >= and <.
 
-from py2mass import _get_radec_peakpixel_from_xsc_line, _find_2mass_dir, _get_file_object
+from .py2mass import _get_radec_peakpixel_from_xsc_line, _find_2mass_dir, _get_file_object
 
 _2mass_dir = _find_2mass_dir()
 

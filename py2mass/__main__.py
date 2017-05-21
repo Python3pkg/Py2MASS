@@ -1,4 +1,4 @@
-from __future__ import absolute_import
+
 import pickle
 import sys
 
@@ -36,16 +36,16 @@ def main():
         else:
             show_help = True
     if show_help:
-        print "Usage:"
-        print "py2mass [psc|xsc] minRA maxRA minDEC maxDEC [pickle]"
-        print "----"
-        print "   psc - 2MASS Point Source Catalog"
-        print "   xsc - 2MASS Extended Source Catalog"
-        print " Default output is a nicely formatted text table."
-        print " Optional keyword (pickle) will dump a pickle of that table, "
-        print " which can then be read back in from file with, e.g.:"
-        print "    import pickle"
-        print "    stars = pickle.load(open(filename, 'r'))"
+        print("Usage:")
+        print("py2mass [psc|xsc] minRA maxRA minDEC maxDEC [pickle]")
+        print("----")
+        print("   psc - 2MASS Point Source Catalog")
+        print("   xsc - 2MASS Extended Source Catalog")
+        print(" Default output is a nicely formatted text table.")
+        print(" Optional keyword (pickle) will dump a pickle of that table, ")
+        print(" which can then be read back in from file with, e.g.:")
+        print("    import pickle")
+        print("    stars = pickle.load(open(filename, 'r'))")
 
 
 if __name__ == '__main__':
